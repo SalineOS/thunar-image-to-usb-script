@@ -1,0 +1,19 @@
+export SELECTDRIVE="Please select the drive to copy the image to."
+
+export NODRIVES="No USB drives found."
+
+export NODRIVESELECTED="No USB drive selected, please retry."
+
+export USBCONFIRM1="This will completely erase the contents of"
+
+export USBCONFIRM2="and replace them with the contents of"
+
+export USBCONFIRM3="Are you sure you want to continue?"
+
+export COPYING="Copying"
+
+export TO="to"
+
+export COMPLETED="completed"
+
+export SELECTONE="Select One"
