@@ -36,7 +36,7 @@ else
 fi
 
 progressbar () {
-tail -f /usr/bin/thunar-image-to-usb | yad --text="$@" "${WindowIcon[@]}" "${Title[@]}" "${Icon[@]}" --progress --pulsate --auto-close --no-buttons
+tail -f /usr/bin/thunar-image-to-usb-script | yad --text="$@" "${WindowIcon[@]}" "${Title[@]}" "${Icon[@]}" --progress --pulsate --auto-close --no-buttons
 }
 
 USBDrives=""
