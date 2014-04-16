@@ -45,12 +45,10 @@ USBDrives=""
 ## Without this code the user will be displayed something REALLY ugly
 ## Pay no mind to the man behind the curtain :)
 
-USBDrives=""
 if [ "$(ls /dev/disk/by-path | grep 'usb')" != "" ]; then
  USBDriveTemp=$(find /dev/disk/by-path/* -printf %f" "%l\\n | grep -v part | grep "usb" | awk '{print $2}' | sed -e 's|../../||g')
-
 for i in $USBDriveTemp; do 
- DriveTest=$(cat /var/log/messages | grep "$i" | grep "removable disk" | tail -1)
+ DriveTest=$(cat /var/log/messages.log | grep "$i" | grep "removable disk" | tail -1)
  DriveTestTwo=$(grep "$i" /proc/partitions)
  
  if [ "$DriveTest" != "" ]; then
@@ -62,6 +60,12 @@ for i in $USBDriveTemp; do
   fi
  fi
  fi
+
+## Some debug help
+echo "$USBDriveTemp"
+echo "$DriveTest"
+echo "$DriveTestTwo"
+echo "$USBDrives"
 
 done
 fi
